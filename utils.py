@@ -35,7 +35,6 @@ def train_in_epochs(num_epochs, train_loader, device, optimizer, criterion, mode
     print('Training Completed in: {} secs'.format(time.time() - start))
 
 
-
 def check_acc_cnn(loader, model, device):
     num_correct = 0
     num_samples = 0
@@ -67,8 +66,7 @@ def check_acc_cnn(loader, model, device):
             f'With training data got {num_correct}/{num_samples} with acc: {float(num_correct) / float(num_samples) * 100:.2f}')
     model.train()
     cm = metrics.confusion_matrix(targ, pred)
-    plot_confusion_matrix(cm, ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"], normalize=False)
-
+    plot_confusion_matrix(cm, ["negative", "positive"], normalize=False)
 
 
 # check if cuda is available
