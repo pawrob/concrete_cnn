@@ -64,7 +64,7 @@ def check_acc_cnn(loader, model, device):
             targ.extend(target.tolist())
 
         print(
-            f'With training data {loader.dataset.train}, got {num_correct}/{num_samples} with acc: {float(num_correct) / float(num_samples) * 100:.2f}')
+            f'With training data got {num_correct}/{num_samples} with acc: {float(num_correct) / float(num_samples) * 100:.2f}')
     model.train()
     cm = metrics.confusion_matrix(targ, pred)
     plot_confusion_matrix(cm, ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"], normalize=False)
